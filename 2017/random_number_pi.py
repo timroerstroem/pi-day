@@ -28,9 +28,11 @@ def gcd(a, b):
 Convert input to float and then to int. It's ugly, but it allows the user to
 input numbers in scientific notation.
 '''
-limit = numpy.int64(float(input("Highest integer to use: ")))
-num = numpy.int64(float(input("Number of integer pairs to use: ")))
-numar = numpy.random.randint(1, high=limit, size=(2, num), dtype='int64')
+limit = numpy.uint64(2**63)
+# numpy.int64(numpy.float64(input("Highest integer: ")))
+num = numpy.uint64(5e7)
+# numpy.int64(numpy.float64(input("Number of integer pairs: ")))
+numar = numpy.random.randint(1, high=limit, size=(2, num), dtype='uint64')
 coprime = []
 
 for i in range(len(numar[0])):
@@ -40,4 +42,4 @@ for i in range(len(numar[0])):
 pi = numpy.sqrt(6/(len(coprime)/num))
 
 print("Pi is approximately " + repr(pi) + " (off by "
-      + str(round((pi-numpy.pi)/numpy.pi * 100, 2)) + " %)")
+      + str(round((pi-numpy.pi)/numpy.pi * 100, 3)) + " %)")
