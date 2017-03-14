@@ -37,6 +37,7 @@ for i in range(len(numar[0])):
     if gcd(numar[0][i], numar[1][i]) == 1:
         coprime.append(1)
 
-prob = len(coprime)/num
+pi = numpy.sqrt(6/(len(coprime)/num))
 
-print("Pi is approximately " + repr(numpy.sqrt(6/prob)))
+print("Pi is approximately " + repr(pi) + " (off by "
+      + str(round((pi-numpy.pi)/numpy.pi * 100, 2)) + " %)")
