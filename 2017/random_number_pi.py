@@ -31,8 +31,12 @@ def gcd(a, b):
             continue
 
 
-limit = int(input("Highest integer to use: "))
-num = int(input("Number of integers to use: "))
+'''
+Convert input to float and then to int. It's ugly, but it allows the user to
+input numbers in scientific notation.
+'''
+limit = numpy.int64(float(input("Highest integer to use: ")))
+num = numpy.int64(float(input("Number of integers to use: ")))
 numar = numpy.random.randint(1, high=limit, size=(2, num))
 coprime = []
 
