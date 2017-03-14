@@ -37,7 +37,7 @@ input numbers in scientific notation.
 '''
 limit = numpy.int64(float(input("Highest integer to use: ")))
 num = numpy.int64(float(input("Number of integers to use: ")))
-numar = numpy.random.randint(1, high=limit, size=(2, num))
+numar = numpy.random.randint(1, high=limit, size=(2, num), dtype='int64')
 coprime = []
 
 for i in range(len(numar[0])):
